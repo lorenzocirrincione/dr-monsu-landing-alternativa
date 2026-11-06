@@ -49,7 +49,7 @@ section{padding-block:clamp(64px,9vw,120px)}
 .note{display:inline-flex;gap:8px;align-items:flex-start;font-size:.8rem;line-height:1.4;color:var(--note);border:1px dashed var(--note);border-radius:8px;padding:6px 10px;font-weight:400;max-width:60ch}
 .note::before{content:"Pendiente";font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.68rem;padding-top:1px;white-space:nowrap}
 body.clean .note{display:none}
-.notes-toggle{position:fixed;left:calc(16px + env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:10px 16px;font:500 .8rem var(--body);cursor:pointer}
+.notes-toggle{display:none;position:fixed;left:calc(16px + env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:999px;padding:10px 16px;font:500 .8rem var(--body);cursor:pointer}
 .notes-toggle span{color:var(--note)}
 
 /* Chips */
@@ -214,8 +214,33 @@ footer{border-top:1px solid var(--line);padding-block:72px 40px}
 .cv-list span{color:var(--muted);font-size:.88rem}
 .cv-quote{margin-top:clamp(48px,7vw,88px)}
 @media (max-width:860px){.cv{grid-template-columns:1fr}}
+/* Presentación móvil de producción */
+@media(max-width:640px){
+  :root{--gutter-l:max(20px,env(safe-area-inset-left,0px));--gutter-r:max(20px,env(safe-area-inset-right,0px))}
+  body{font-size:16px;line-height:1.55}
+  section{padding-block:56px}
+  .nav-shell{padding-top:10px;margin-bottom:-82px}
+  .nav{height:66px;border-radius:18px;padding-inline:14px}
+  .nav-left svg{width:20px;height:20px}
+  .logo{gap:2px}
+  .logo svg{width:72px}
+  .logo-word{font-size:.54rem;letter-spacing:.055em}
+  .menu-btn{min-width:44px;min-height:44px;justify-content:center;padding:10px}
+  .hero{min-height:auto;padding-block:126px 58px;align-items:flex-end}
+  .hero-wave{top:21%;right:-18%;width:92%}
+  .hero-content{gap:20px;max-width:none}
+  .hero-content .eyebrow{font-size:.68rem;line-height:1.5;max-width:28ch}
+  .hero h1{font-size:clamp(2.35rem,12vw,3.25rem);line-height:1.02;letter-spacing:-.025em;text-wrap:balance}
+  .hero .lead{font-size:1rem;line-height:1.6;max-width:34ch}
+  .hero-ctas{display:grid;grid-template-columns:1fr;gap:12px;width:100%;max-width:340px}
+  .hero-ctas .btn{justify-content:center;width:100%;min-height:52px;padding:13px 20px;font-size:.95rem}
+}
+@media(max-width:370px){
+  .hero{padding-top:118px}
+  .hero h1{font-size:2.2rem}
+}
 </style>
-</head><body>
+</head><body class="clean">
 
 <div class="nav-shell">
   <header class="nav">
